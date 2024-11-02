@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql
+    container_name: portfolio-db
+    restart: always
+    environment:
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: strong_password
+      MYSQL_DB: portfolio-db
+    ports:
+      - "3307:3306"
+    volumes:
+      - portfolio-db:/var/lib/mysql
+
+
+volumes:
+  portfolio-db:
