@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("about/")
+@RequestMapping("api/about/")
 public class AboutController {
     private AboutService aboutService;
 
@@ -37,7 +37,7 @@ public class AboutController {
         return ResponseEntity.ok(abouts);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAboutById(@PathVariable("id") long id) {
         aboutService.deleteAboutById(id);
         return ResponseEntity.ok("Account Deleted Successfully");
