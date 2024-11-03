@@ -2,7 +2,6 @@ package dev.oscarmiranda.portfolio.backend.controller;
 
 import dev.oscarmiranda.portfolio.backend.dto.AboutDTO;
 import dev.oscarmiranda.portfolio.backend.service.AboutService;
-import jakarta.persistence.PostRemove;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +29,7 @@ public class AboutController {
         return ResponseEntity.ok(aboutDTO);
     }
 
+    @CrossOrigin
     @GetMapping("/all")
     public ResponseEntity<List<AboutDTO>> getAllAbout() {
         List<AboutDTO> abouts = aboutService.getAllAbouts();
