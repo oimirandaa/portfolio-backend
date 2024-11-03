@@ -40,6 +40,6 @@ public class AboutController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAboutById(@PathVariable("id") long id) {
         aboutService.deleteAboutById(id);
-        return ResponseEntity.ok("Account Deleted Successfully");
+        return ResponseEntity.ok("About Deleted Successfully");
     }
 }

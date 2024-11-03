@@ -5,10 +5,12 @@ import dev.oscarmiranda.portfolio.backend.entity.Brands;
 import dev.oscarmiranda.portfolio.backend.mapper.BrandsMapper;
 import dev.oscarmiranda.portfolio.backend.repository.BrandsRepository;
 import dev.oscarmiranda.portfolio.backend.service.BrandsService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class BrandsServiceImpl implements BrandsService {
     private BrandsRepository brandsRepository;
 

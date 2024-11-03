@@ -5,11 +5,13 @@ import dev.oscarmiranda.portfolio.backend.entity.Contact;
 import dev.oscarmiranda.portfolio.backend.mapper.ContactMapper;
 import dev.oscarmiranda.portfolio.backend.repository.ContactRepository;
 import dev.oscarmiranda.portfolio.backend.service.ContactService;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ContactServiceImpl implements ContactService {
     private ContactRepository contactRepository;
 
