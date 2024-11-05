@@ -36,6 +36,19 @@ public class WorkServiceImpl implements WorkService {
     }
 
     @Override
+    public WorkDTO updateWorkImage(long id, String newImageURL) {
+        Work work = workRepository
+                .findById(id)
+                .orElseThrow(() -> new RuntimeException("No existe el trabajo"));
+
+        work.setImageUrl(newImageURL);
+
+        Work updatedWork = workRepository.save(work);
+
+        return WorkMapper.mapWorkToWorkDTO(updatedWork);
+    }
+
+    @Override
     public List<WorkDTO> getAllWork() {
         List<Work> works = workRepository.findAll();
         return works.stream()

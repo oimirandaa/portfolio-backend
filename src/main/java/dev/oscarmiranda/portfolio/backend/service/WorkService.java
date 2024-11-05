@@ -9,6 +9,7 @@ import java.util.List;
 public interface WorkService {
     WorkDTO createWork(WorkDTO workDTO);
     WorkDTO getContactById(long id);
+    WorkDTO updateWorkImage(long id, String newImageURL);
     List<WorkDTO> getAllWork();
     void deleteWork(long id);
 }

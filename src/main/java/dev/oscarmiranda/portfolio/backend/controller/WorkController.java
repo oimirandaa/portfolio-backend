@@ -29,7 +29,7 @@ public class WorkController {
     }
 
     @CrossOrigin
-    @GetMapping("/allWork")
+    @GetMapping("/all")
     public ResponseEntity<List<WorkDTO>> getAllWork() {
         List<WorkDTO> workDTOList = workService.getAllWork();
         return ResponseEntity.ok(workDTOList);
@@ -40,5 +40,12 @@ public class WorkController {
         workService.deleteWork(id);
 
         return ResponseEntity.ok("Contact Deleted Succesfully");
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> updateWorkImage(@PathVariable long id, @RequestBody WorkDTO workDTO) {
+        workService.updateWorkImage(id, workDTO.imageUrl());
+
+        return ResponseEntity.ok("Contact Updated Succesfully");
     }
 }
