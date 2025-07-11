@@ -1,17 +1,18 @@
 services:
+
   db:
-    image: mysql
-    container_name: portfolio-db
+    image: postgres
     restart: always
+    shm_size: 128mb
     environment:
-      MYSQL_ROOT_USERNAME: root
-      MYSQL_ROOT_PASSWORD: strong_password
-      MYSQL_DB: portfolio-db
+      POSTGRES_PASSWORD: dev_password
+      POSTGRES_USER: dev_user
+      POSTGRES_DB: portfolio_DB
     ports:
-      - "3307:3306"
-    volumes:
-      - portfolio-db:/var/lib/mysql
+      - "5432:5432"
 
-
-volumes:
-  portfolio-db:
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - 8080:8080
