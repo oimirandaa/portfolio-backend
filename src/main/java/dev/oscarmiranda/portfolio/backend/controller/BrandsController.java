@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/brands/")
 public class BrandsController {
-    private BrandsService brandsService;
+    private final BrandsService brandsService;
 
     public BrandsController(BrandsService brandsService) {
         this.brandsService = brandsService;
@@ -35,7 +35,7 @@ public class BrandsController {
         return ResponseEntity.ok(brands);
     }
 
-    @DeleteMapping("/delet/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteBrand(@PathVariable("id") int id) {
         brandsService.deleteBrandById(id);
         return ResponseEntity.ok("Brand Deleted Successfully");

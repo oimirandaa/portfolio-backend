@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class BrandsServiceImpl implements BrandsService {
-    private BrandsRepository brandsRepository;
+    private final BrandsRepository brandsRepository;
 
     public BrandsServiceImpl(BrandsRepository brandsRepository) {
         this.brandsRepository = brandsRepository;
